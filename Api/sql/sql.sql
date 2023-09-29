@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS devbook;
+USE devbook;
+
+DROP TABLE IF EXISTS usuarios;
+
+CREATE TABLE usuarios(
+    id int AUTO_INCREMENT PRIMARY key,
+    nome VARCHAR(50) not NULL,
+    nick VARCHAR(50) not NULL UNIQUE,
+    email VARCHAR(50) not NULL UNIQUE,
+    senha VARCHAR(50) not NULL,
+    criadoEm TIMESTAMP default CURRENT_TIMESTAMP()
+) ENGINE=INNODB;
